@@ -7,12 +7,20 @@ import { EmpleadoHijoCComponent } from './empleado-hijo-c/empleado-hijo-c.compon
 import { CaracteristicasEmpleadoCComponent } from './caracteristicas-empleado-c/caracteristicas-empleado-c.component';
 import { ServicioEmpleadosService } from './servicio-empleados.service';
 import { EmpleadosService } from './empleados.service';
+import { HomeComponentComponent } from './home-component/home-component.component';
+import { ProyectosComponentComponent } from './proyectos-component/proyectos-component.component';
+import { QuienesComponentComponent } from './quienes-component/quienes-component.component';
+import { ContactoComponentComponent } from './contacto-component/contacto-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmpleadoHijoCComponent,
     CaracteristicasEmpleadoCComponent,
+    HomeComponentComponent,
+    ProyectosComponentComponent,
+    QuienesComponentComponent,
+    ContactoComponentComponent,
   ],
   imports: [
     BrowserModule,

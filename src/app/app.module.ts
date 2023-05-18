@@ -11,6 +11,18 @@ import { HomeComponentComponent } from './home-component/home-component.componen
 import { ProyectosComponentComponent } from './proyectos-component/proyectos-component.component';
 import { QuienesComponentComponent } from './quienes-component/quienes-component.component';
 import { ContactoComponentComponent } from './contacto-component/contacto-component.component';
+import { RouterModule, Routes } from '@angular/router';
+
+
+const appRoutes:Routes=[
+
+  {path:'', component:HomeComponentComponent},
+  {path:'proyectos',component:ProyectosComponentComponent},
+  {path:'quienes',component:QuienesComponentComponent},
+  {path:'contacto',component:ContactoComponentComponent},
+
+
+]
 
 @NgModule({
   declarations: [
@@ -24,7 +36,8 @@ import { ContactoComponentComponent } from './contacto-component/contacto-compon
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [ServicioEmpleadosService, EmpleadosService],
   bootstrap: [AppComponent]

@@ -1,1 +1,41 @@
 <p>proyectos-component works!</p>
+
+<form class="form-group row">
+  
+    <div class="form-group col-md-3">
+
+      <label for="Nombre">Nombre:</label>
+      <input type="text" name="Nombre" id="Nombre" placeholder="Nombre" class="form-control" [(ngModel)]="cuadroNombre"> 
+
+    </div>
+
+    <div class="form-group col-md-3">
+
+      <label for="Apellido">Apellido:</label>
+      <input type="text" name="Apellido" id="Apellido" placeholder="Apellido" class="form-control" [(ngModel)]="cuadroApellido"> 
+
+    </div>
+
+    <div class="form-group col-md-3">
+
+      <label for="Cargo">Cargo:</label>
+      <input type="text" name="Cargo" id="Cargo" placeholder="Cargo" class="form-control" [(ngModel)]="cuadroCargo"> 
+
+    </div>
+
+    <div class="form-group col-md-3">
+
+      <label for="Salario">Salario:</label>
+      <input type="number" name="Salario" id="Salario" placeholder="Salario" class="form-control" [(ngModel)]="cuadroSalario"> 
+
+    </div>
+
+    <div class="col">
+      <button type="submit" class="btn btn-primary" style="margin-top: 35px;" (click)="agregarEmpleado()">Agregar</button>
+    </div>
+
+  </form>
+
+<div style="text-align: center;">
+    <button class="btn btn-outline-dark" (click)="volverHome()">volver al inicio</button>
+</div>

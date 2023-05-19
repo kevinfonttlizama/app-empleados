@@ -15,6 +15,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ActualizaComponentComponent } from './actualiza-component/actualiza-component.component';
 import { ErrorPersonalizadoComponent } from './error-personalizado/error-personalizado.component';
 import { DataServices } from './data.services';
+import { LoginComponent } from './login/login.component';
 
 
 const appRoutes:Routes=[
@@ -40,6 +41,7 @@ const appRoutes:Routes=[
     ContactoComponentComponent,
     ActualizaComponentComponent,
     ErrorPersonalizadoComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { loginService } from './login.service';
+
+
+
 
 @Component({
   selector: 'app-login',

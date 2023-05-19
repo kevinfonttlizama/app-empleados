@@ -9,10 +9,16 @@ export class DataServices {
     constructor(private httpClient:HttpClient){}
 
     
+    cargarEmpleados(){
+
+        return this.httpClient.get('https://mis-clientes-4fd54-default-rtdb.firebaseio.com/datos.json')
+
+    }
+
     
     guardarEmpleados(empleados:Empleado[]){
             
-        this.httpClient.post('https://mis-clientes-4fd54-default-rtdb.firebaseio.com/datos.json',empleados).subscribe(
+        this.httpClient.put('https://mis-clientes-4fd54-default-rtdb.firebaseio.com/datos.json',empleados).subscribe(
 
             Response=>console.log("se han guardado los empleados: " + Response),
 
@@ -22,7 +28,18 @@ export class DataServices {
     }
 
     
+    actualizarEmpleados(indice:number,empleado:Empleado){
 
+        let url='https://mis-clientes-4fd54-default-rtdb.firebaseio.com/datos/'+ indice + '.json';
+
+        this.httpClient.put(url,empleado).subscribe(
+
+        Response=>console.log("se ha modificado correctamente el empleado: " + Response),
+
+        error=> console.log("Error :" + error)
+    )
+
+    }
 
 
 

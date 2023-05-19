@@ -12,14 +12,25 @@ export class EmpleadosService{
   }
 
 
-    empleados:Empleado[]= [
+    setEmpleados(misEmpleados:Empleado[]){
+      this.empleados=misEmpleados;
+    }
 
-        new Empleado("Kevin","Fontt","Dios",999999),
-        new Empleado("cum","mckinley","subordinado",999999),
-        new Empleado("scarlett","Fontt","mascota",100),
-        new Empleado("fabian","muñoz","nose",0)
+    obtenerEmpleados(){
+      return this.dataservice.cargarEmpleados();
+    }
     
-      ]
+    
+    empleados:Empleado[]= [];
+
+    // empleados:Empleado[]= [
+
+    //     new Empleado("Kevin","Fontt","Dios",999999),
+    //     new Empleado("cum","mckinley","subordinado",999999),
+    //     new Empleado("scarlett","Fontt","mascota",100),
+    //     new Empleado("fabian","muñoz","nose",0)
+    
+    //   ]
 
       agregarEmpleadoServicio(empleado:Empleado){
         this.empleados.push(empleado);
@@ -40,7 +51,9 @@ export class EmpleadosService{
         empleadoModificado.nombre= empleado.nombre;
         empleadoModificado.apellido= empleado.apellido,
         empleadoModificado.cargo= empleado.cargo,
-        empleadoModificado.salario=empleado.salario
+        empleadoModificado.salario=empleado.salario;
+
+        this.dataservice.actualizarEmpleados(indice,empleado);
 
       }
 

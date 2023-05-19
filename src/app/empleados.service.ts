@@ -1,6 +1,16 @@
+import { Injectable } from "@angular/core";
+import { DataServices } from "./data.services";
 import { Empleado } from "./empleado.model";
+import { ServicioEmpleadosService } from "./servicio-empleados.service";
+
+@Injectable()
 
 export class EmpleadosService{
+
+  constructor(private servicioVentanaEmergente: ServicioEmpleadosService,private dataservice:DataServices) {
+
+  }
+
 
     empleados:Empleado[]= [
 
@@ -13,6 +23,9 @@ export class EmpleadosService{
 
       agregarEmpleadoServicio(empleado:Empleado){
         this.empleados.push(empleado);
+
+        this.dataservice.guardarEmpleados(this.empleados)
+
       }
 
       encontrarEmpleado(indice:number){

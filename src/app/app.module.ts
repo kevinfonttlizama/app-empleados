@@ -16,6 +16,7 @@ import { ActualizaComponentComponent } from './actualiza-component/actualiza-com
 import { ErrorPersonalizadoComponent } from './error-personalizado/error-personalizado.component';
 import { DataServices } from './data.services';
 import { LoginComponent } from './login/login.component';
+import { loginService } from './login/login.service';
 
 
 const appRoutes:Routes=[
@@ -50,7 +51,7 @@ const appRoutes:Routes=[
     RouterModule.forRoot(appRoutes),
     HttpClientModule
   ],
-  providers: [ServicioEmpleadosService, EmpleadosService,DataServices],
+  providers: [ServicioEmpleadosService, EmpleadosService,DataServices,loginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

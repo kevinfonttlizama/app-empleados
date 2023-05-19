@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import firebase from 'firebase/compat/app'
+import { loginService } from './login/login.service';
 
 
 @Component({
@@ -11,7 +12,11 @@ export class AppComponent  {
   titulo = 'listado de empleados';
 
 
+  constructor(private loginService:loginService){
 
+
+
+  }
 
 
 
@@ -24,6 +29,16 @@ export class AppComponent  {
       authDomain: "mis-clientes-4fd54.firebaseapp.com",
 
     })
+  }
+
+  estaLogueado(){
+
+    return this.loginService.estaLogeado();
+
+  }
+
+  logOut(){
+    this.loginService.logOut();
   }
 
   

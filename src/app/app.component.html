@@ -1,16 +1,23 @@
 <nav class="navbar navbar-expand-sm bg-light">
   <ul class="navbar-nav">
-    <li class="new-item">
+    <li class="nav-item">
       <a class="nav-link" href="">home</a>
     </li>
-    <li class="new-item">
+    <li class="nav-item">
       <a class="nav-link" href="/proyectos">proyectos</a>
     </li>
-    <li class="new-item">
+    <li class="nav-item">
       <a class="nav-link" href="/quienes">quienes somos</a>
     </li>
-    <li class="new-item">
+    <li class="nav-item">
       <a class="nav-link" href="/contacto">contacto</a>
+    </li>
+   
+    <li class="nav-item" style="margin-left: 1000px;" *ngIf="!estaLogueado()">
+      <a class="nav-link" href="" routerLink="/login">Login</a>
+    </li>
+    <li class="nav-item" style="margin-left: 1000px;" *ngIf="estaLogueado()">
+      <a class="nav-link" href="" (click)="logOut()">Logout</a>
     </li>
   </ul>
 </nav>

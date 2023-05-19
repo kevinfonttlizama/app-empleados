@@ -61,6 +61,12 @@ export class EmpleadosService{
 
         this.empleados.splice(indice,1);
 
+        this.dataservice.eliminarEmpleado(indice);
+
+        if(this.empleados!=null)this.dataservice.guardarEmpleados(this.empleados);
+
+
+
       }
 
 }
